@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebGL Initialization</title>
+  </head>
+  <body>
+    <canvas
+      id="webglCanvas"
+      width="800"
+      height="600"
+      style="border: 1px solid black"
+    ></canvas>
+
+    <script>
+      const canvas = document.getElementById("webglCanvas");
+
+      const gl =
+        canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+
+      if (!gl) {
+        alert("WebGL tidak didukung di browser ini.");
+      } else {
+        console.log("WebGL berhasil diinisialisasi!");
+
+        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+      }
+    </script>
+  </body>
+</html>
